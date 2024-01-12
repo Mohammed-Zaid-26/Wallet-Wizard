@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="financeTrackerApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Wizard</title>
+    <!-- Include AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Include your JavaScript file -->
+    <script src="user.js"></script>
+    <!-- Include your CSS file -->
+    <link href="user.css" rel="stylesheet" type="text/css" />
+     </head>
+<body ng-controller="FinanceController">
+
+    <header>
+        <h1>Wallet Wizard</h1>
+  
+    </header>
+
+    <section id="income">
+        <h2>Income</h2>
+        <form ng-submit="addIncome()">
+            <label for="incomeDescription">Description:</label>
+            <input type="text" id="incomeDescription" ng-model="newIncome.description" required>
+
+            <label for="incomeAmount">Amount:</label>
+            <input type="number" id="incomeAmount" ng-model="newIncome.amount" required>
+
+            <button type="submit">Add Income</button>
+        </form>
+
+        <ul>
+            <li ng-repeat="income in incomeTransactions">{{ income.description }}: ${{ income.amount | number:2 }}</li>
+        </ul>
+    </section>
+
+    <section id="expenses">
+        <h2>Expenses</h2>
+        <form ng-submit="addExpense()">
+            <label for="expenseDescription">Description:</label>
+            <input type="text" id="expenseDescription" ng-model="newExpense.description" required>
+
+            <label for="expenseAmount">Amount:</label>
+            <input type="number" id="expenseAmount" ng-model="newExpense.amount" required>
+
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <ul>
+            <li ng-repeat="expense in expenseTransactions">{{ expense.description }}: ${{ expense.amount | number:2 }}</li>
+        </ul>
+    </section>
+
+    <section id="summary">
+        <h2>Summary</h2>
+        <p>Total Income: ${{ getTotalIncome() | number:2 }}</p>
+        <p>Total Expenses: ${{ getTotalExpenses() | number:2 }}</p>
+        <p>Balance: ${{ getBalance() | number:2 }}</p>
+    </section>
+
+</body>
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</html>

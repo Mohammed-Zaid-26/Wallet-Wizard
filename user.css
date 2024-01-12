@@ -1,0 +1,73 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  body, h1, h2, p, ul, li, form {
+      margin: 20;
+      padding: 0;
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+    background-color: black;
+  }
+  
+  header {
+      background-color: gray;
+      color: black;
+      text-align: center;;
+      padding: 1em 0;
+  }
+  
+  section {
+      margin: 20px 0;
+    background-color: black;
+    color: gray;
+    
+  }
+  
+  form {
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      margin-bottom: 15px;
+  }
+  
+  label {
+      margin-bottom: 5px;
+    color: gray;
+  }
+  
+  input, button {
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 14px;
+  }
+  
+  button {
+      background-color: gray;
+      color: white bold;
+      cursor: pointer;
+  }
+  
+  ul {
+      list-style: none;
+      padding: 0;
+      color: gray;
+  }
+  
+  li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid gray;
+      padding: 10px;
+      margin-bottom: 5px;
+  }
+  
+  /* Optional: Add more styling based on your preferences */
+  #income, #expenses, #summary {
+      border: 1px solid #ddd;
+      padding: 15px;
+  }
+  
